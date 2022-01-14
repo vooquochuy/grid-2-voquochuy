@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+*::before ,*::after{
+    box-sizing: border-box;
+}
+div{
+    display: block;
+}
+body{
+    font-size: 16px;
+    font-family:sans-serif;
+}
+img{
+    display: block;
+    max-width: 100% ;
+}
+.first-layout{
+    display: grid;
+    /* //cac phan tu con se bi anh huong */
+    /* chia-cot */
+    grid-template-columns:200px 200px 100px;
+    /* grid-template-columns:50% 20% 30%; */
+    grid-template-columns:calc(50%-40px) calc(20%-40px) 30%;
+    grid-template-columns:33.33% 33.33% 33.33%;
+    grid-template-columns:1fr 1fr 1fr;
+
+    /* grid-column-gap: 40px;
+    grid-row-gap: 20px; */
+    grid-gap: 20px;
+    /* gap-count =columncount-1 */
+    /* gap: grid-row-gap(khoan trong giua cac hang) grid-column-gap(kt giua cac cot); */
+    /* grid-template-columns: column-size column-size;  */
+    /* chia thanh cac cot co */
+    /* grid-template-rows: ; */
+    /* track line bat dau tu so 1 */
+    /* so cot la 3 -> track line = so cot +1 */
+    grid-template-rows: 200px 600px;
+    grid-template-rows:auto auto;
+
+}
+
+.layout-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* 4 column
+tong 800px
+row1 350px
+row2 100px
+row3 350px*/
+.second-layout{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 350px 100px 350px;
+    grid-gap: 20px;
+    padding: 10px;
+    background-image: url(./img/arianna-martinucci-JmZkQNSSgrU-unsplash.jpg);
+    /* background-color: #00bfbf41; */
+    /* background-image: linear-gradient(red, rgb(17, 69, 104) ); */
+}
+.layout-items{
+    border-radius: 5px;
+    overflow: hidden;
+}
+.layout-items:first-child{
+    /* grid-column: trackline-start /trackline-end; */
+    /* grid-row: trackline-start /trackline-end; */
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+.layout-items:nth-child(2),
+.layout-items:nth-child(3){
+    grid-row: 1/3;
+}
+.layout-items:nth-child(4),
+.layout-items:nth-child(5){
+    grid-row: 2/4;
+}
+.layout-items:last-child{
+    grid-column: 3/5;
+}
